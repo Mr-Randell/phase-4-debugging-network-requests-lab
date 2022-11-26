@@ -60,14 +60,29 @@ developing your own process.
 
 ## Your Notes Here
 
+To begin with, the following steps:
+  - using "rails routes", check available routes (:delete missing, add it)
+  - check controller (all actions present), now go through them one at a time
+
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  checked toy variable pointing to Toy.create(toy_params), noticed typo error on the class name - correct that!
+  checked on the json render for the action, no problems here
+  test frontend to confirm fix, success!
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  checked toy variable pointing to Toy.find_by(id: params[:id]), code is okay!
+  checked on the json render for the action, we're updating the wrong item here, correct that... (noticed i was wrong with my approach here)
+  checked console logs and "Uncaught(in promise) internal server error and immediately figured the action isn't returning json - correct that!
+  test frontend to confirm fix, success!
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  checked toy variable pointing to Toy.find_by(id: params[:id]), code is okay!
+  checked on the json render for the action, code is okay!
+  already added :destroy to the routes resource, code is okay there too!
+  test frontend to confirm fix, success!
